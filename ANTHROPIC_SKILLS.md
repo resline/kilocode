@@ -4,20 +4,33 @@
 
 This document lists all officially installed Anthropic skills for Claude Code. These skills extend Claude's capabilities with specialized knowledge, workflows, and tool integrations.
 
+## Project-Level Skills ✨
+
+**All skills are now stored in the repository at `.claude/skills/`** and are automatically available to all team members. This means:
+- ✅ Skills are version-controlled with your code
+- ✅ Team members automatically get skills when they clone/pull the repository
+- ✅ No need to manually install plugins on each machine
+- ✅ Skills work immediately for everyone on the team
+
 ## Installation Summary
 
-- **Marketplace**: `anthropic-agent-skills`
+- **Location**: `.claude/skills/` (project-level, in repository)
 - **Source**: https://github.com/anthropics/skills
 - **Date Installed**: 2025-11-04
-- **Total Skills**: 15 (grouped in 2 plugins)
+- **Total Skills**: 15 skills
+- **Marketplace**: `anthropic-agent-skills` (optional, for updates)
 
-## Installation Command
+## Setup for New Team Members
+
+**No setup required!** When you clone this repository, all skills are automatically available.
+
+### Optional: Add marketplace for updates
 
 ```bash
-# Add the official Anthropic skills marketplace
+# Optional: Add the official Anthropic skills marketplace for future updates
 claude plugin marketplace add https://github.com/anthropics/skills
 
-# Install all skills
+# Optional: Install as plugins (alternative to project-level)
 claude plugin install document-skills@anthropic-agent-skills
 claude plugin install example-skills@anthropic-agent-skills
 ```
@@ -232,14 +245,54 @@ claude plugin install example-skills@anthropic-agent-skills
 
 ## Verification
 
-To verify installed skills:
+To verify project skills are loaded:
+
+```bash
+# Check that skills directory exists
+ls -la .claude/skills/
+
+# List all skills in the project
+ls .claude/skills/
+
+# Verify a specific skill has SKILL.md
+cat .claude/skills/xlsx/SKILL.md | head -5
+```
+
+To verify marketplace plugins (if installed):
 
 ```bash
 # List configured marketplaces
 claude plugin marketplace list
 
-# Check installed plugins (look for enabledPlugins in settings)
+# Check installed plugins
 cat ~/.claude/settings.json
+```
+
+## Updating Skills
+
+To update skills to the latest version from Anthropic:
+
+```bash
+# 1. Update the marketplace (if you have it installed)
+claude plugin marketplace update anthropic-agent-skills
+
+# 2. Re-copy skills to repository
+rm -rf .claude/skills/*
+cp -r ~/.claude/plugins/marketplaces/anthropic-agent-skills/document-skills/* .claude/skills/
+cp -r ~/.claude/plugins/marketplaces/anthropic-agent-skills/algorithmic-art .claude/skills/
+cp -r ~/.claude/plugins/marketplaces/anthropic-agent-skills/artifacts-builder .claude/skills/
+cp -r ~/.claude/plugins/marketplaces/anthropic-agent-skills/brand-guidelines .claude/skills/
+cp -r ~/.claude/plugins/marketplaces/anthropic-agent-skills/canvas-design .claude/skills/
+cp -r ~/.claude/plugins/marketplaces/anthropic-agent-skills/internal-comms .claude/skills/
+cp -r ~/.claude/plugins/marketplaces/anthropic-agent-skills/mcp-builder .claude/skills/
+cp -r ~/.claude/plugins/marketplaces/anthropic-agent-skills/skill-creator .claude/skills/
+cp -r ~/.claude/plugins/marketplaces/anthropic-agent-skills/slack-gif-creator .claude/skills/
+cp -r ~/.claude/plugins/marketplaces/anthropic-agent-skills/theme-factory .claude/skills/
+cp -r ~/.claude/plugins/marketplaces/anthropic-agent-skills/webapp-testing .claude/skills/
+
+# 3. Commit the updated skills
+git add .claude/skills/
+git commit -m "Update Anthropic skills to latest version"
 ```
 
 ## Additional Resources
@@ -247,6 +300,7 @@ cat ~/.claude/settings.json
 - **Official Repository**: https://github.com/anthropics/skills
 - **Claude Code Documentation**: https://docs.claude.com/
 - **Agent Skills Documentation**: https://docs.claude.com/en/docs/agents-and-tools/agent-skills/
+- **Project Skills Guide**: https://docs.claude.com/en/docs/claude-code/skills.md
 
 ## License
 
@@ -255,3 +309,4 @@ All skills are proprietary. See LICENSE.txt in each skill directory for complete
 ---
 
 **Generated**: 2025-11-04 by Terragon Labs
+**Updated**: 2025-11-04 - Added project-level skills in `.claude/skills/`
