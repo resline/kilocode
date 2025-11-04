@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html { background: #ffffff; }
+body {
+  width: 720pt; height: 405pt; margin: 0; padding: 0;
+  background: #ffffff; font-family: Arial, sans-serif;
+  display: flex; flex-direction: column;
+}
+.header {
+  background: #292929; padding: 20pt 40pt;
+  border-bottom: 4pt solid #E33737;
+}
+h1 {
+  color: #ffffff; font-size: 36pt; font-weight: bold; margin: 0;
+}
+.content {
+  padding: 25pt 50pt 50pt 50pt;
+}
+h2 {
+  color: #E33737; font-size: 17pt; font-weight: bold;
+  margin: 0 0 12pt 0;
+}
+ul {
+  font-size: 14pt; color: #292929; line-height: 1.5;
+  margin: 0;
+}
+li {
+  margin-bottom: 6pt;
+}
+.footer {
+  position: absolute; bottom: 15pt; right: 30pt;
+  color: #CCCBCB; font-size: 12pt;
+}
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>EXECUTIVE SUMMARY</h1>
+</div>
+<div class="content">
+  <h2>Kluczowe Wnioski</h2>
+  <ul>
+    <li><b>Architektura:</b> Open-source VS Code extension (~11k linii TypeScript) z Model Context Protocol (MCP)</li>
+    <li><b>Dane:</b> Kod transmitowany do LLM providers (Anthropic, OpenAI) bez lokalnej kontroli</li>
+    <li><b>Klucze API:</b> Plaintext w ~/.kilocode/settings.json bez szyfrowania</li>
+    <li><b>MCP Servers:</b> Wykonywanie dowolnych poleceń systemowych przez zewnętrzne procesy</li>
+    <li><b>Vendor:</b> Małe startup bez SLA, certyfikacji, wsparcia enterprise</li>
+    <li><b>ROI:</b> +€183k w 3 lata, ale wymaga €387k TCO na zabezpieczenia</li>
+  </ul>
+</div>
+<p class="footer">3 • POUFNE</p>
+</body>
+</html>
