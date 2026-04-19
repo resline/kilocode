@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html { background: #ffffff; }
+body {
+  width: 720pt; height: 405pt; margin: 0; padding: 0;
+  background: #ffffff; font-family: Arial, sans-serif;
+  display: flex; flex-direction: column;
+}
+.header {
+  background: #292929; padding: 20pt 40pt;
+  border-bottom: 4pt solid #E33737;
+}
+h1 {
+  color: #ffffff; font-size: 36pt; font-weight: bold; margin: 0;
+}
+.content {
+  padding: 20pt 40pt 50pt 40pt;
+  display: flex; gap: 30pt;
+}
+.left {
+  flex: 1.2;
+}
+.right {
+  flex: 0.8;
+}
+.placeholder {
+  background: #f5f5f5; border: 2px dashed #CCCBCB;
+}
+#matrix-table {
+  width: 380pt; height: 247pt;
+}
+#radar-chart {
+  width: 240pt; height: 247pt;
+}
+.footer {
+  position: absolute; bottom: 15pt; right: 30pt;
+  color: #CCCBCB; font-size: 12pt;
+}
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>MATRYCA DECYZYJNA</h1>
+</div>
+<div class="content">
+  <div class="left">
+    <div id="matrix-table" class="placeholder"></div>
+  </div>
+  <div class="right">
+    <div id="radar-chart" class="placeholder"></div>
+  </div>
+</div>
+<p class="footer">6 • POUFNE</p>
+</body>
+</html>

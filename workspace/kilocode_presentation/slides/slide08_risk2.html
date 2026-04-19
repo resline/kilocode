@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html { background: #ffffff; }
+body {
+  width: 720pt; height: 405pt; margin: 0; padding: 0;
+  background: #ffffff; font-family: Arial, sans-serif;
+  display: flex; flex-direction: column;
+}
+.header {
+  background: #E33737; padding: 20pt 40pt;
+  display: flex; align-items: center; gap: 15pt;
+}
+.icon {
+  font-size: 36pt;
+}
+h1 {
+  color: #ffffff; font-size: 28pt; font-weight: bold; margin: 0;
+}
+.content {
+  padding: 8pt 50pt 50pt 50pt;
+}
+h2 {
+  color: #E33737; font-size: 18pt; font-weight: bold;
+  margin: 0 0 12pt 0;
+}
+p {
+  font-size: 12pt; color: #292929; line-height: 1.4;
+  margin: 0 0 10pt 0;
+}
+ul {
+  font-size: 12pt; color: #292929; line-height: 1.4;
+  margin: 0;
+}
+li {
+  margin-bottom: 4pt;
+}
+.impact {
+  background: #f5f5f5; padding: 10pt 16pt;
+  border-left: 6pt solid #E33737; margin: 6pt 0;
+}
+.footer {
+  position: absolute; bottom: 15pt; right: 30pt;
+  color: #CCCBCB; font-size: 12pt;
+}
+</style>
+</head>
+<body>
+<div class="header">
+  <p class="icon">🔴</p>
+  <h1>RYZYKO #2: MCP Code Execution</h1>
+</div>
+<div class="content">
+  <p>MCP servers wykonują dowolne polecenia systemowe bez sandboxing - ryzyko arbitrary code execution.</p>
+
+  <div class="impact">
+    <h2>Impact</h2>
+    <ul>
+      <li><b>Finansowy:</b> €5M-10M (incident response)</li>
+      <li><b>Techniczny:</b> Kompromitacja systemu</li>
+      
+    </ul>
+  </div>
+
+  <h2>Mitigation (€72k/3y)</h2>
+  <ul>
+    <li>Docker sandboxing z ograniczonymi uprawnieniami</li>
+    <li>Runtime monitoring & anomaly detection (SIEM integration)</li>
+  </ul>
+</div>
+<p class="footer">8 • POUFNE</p>
+</body>
+</html>
